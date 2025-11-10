@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+    <div className="min-h-screen bg-slate-950 font-sans text-white">
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#home" className="font-display text-lg font-semibold">Patrick</a>
+          <nav className="hidden gap-6 text-sm text-white/70 sm:flex">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
+          <a
+            href="#contact"
+            className="rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-cyan-500/20 hover:brightness-110"
           >
-            Count is {count}
-          </button>
+            Hire Me
+          </a>
         </div>
-      </div>
+      </header>
+
+      <main className="pt-16">
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
